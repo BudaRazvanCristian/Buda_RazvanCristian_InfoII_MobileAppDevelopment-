@@ -1,20 +1,22 @@
 public class Main {
     public static void main(String[] args) {
-        System.out.println(sortCharacters("hEILoWoRLd"));
+        System.out.println(customString("hEILoWoRLd"));
     }
 
-    public static String sortCharacters(String input) {
-        StringBuilder lowercaseLetters = new StringBuilder();
-        StringBuilder uppercaseLetters = new StringBuilder();
-
-        for (char character : input.toCharArray()) {
-            if (character >= 'a' && character <= 'z') {
-                lowercaseLetters.append(character);
-            } else if (character >= 'A' && character <= 'Z') {
-                uppercaseLetters.append(character);
+    public static String customString(String inputString) {
+        String newString = "";
+        for (int i = 0; i < inputString.length(); i++) {
+            char c = inputString.charAt(i);
+            if (c >= 'a' && c <= 'z') {
+                newString += c;
             }
         }
-
-        return lowercaseLetters.toString() + uppercaseLetters.toString();
+        for (int i = 0; i < inputString.length(); i++) {
+            char c = inputString.charAt(i);
+            if (c >= 'A' && c <= 'Z') {
+                newString += c;
+            }
+        }
+        return newString;
     }
 }
